@@ -4,7 +4,8 @@
   "description": "1. Initialize npm 2. Install express    1. public directory    2. listen on port 3000s 3. create `src` folder 4. create `index.js` in `/src`",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "start-dev": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +13,8 @@
   "dependencies": {
     "express": "^4.17.2",
     "socket.io": "^4.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }

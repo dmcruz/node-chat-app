@@ -76,7 +76,7 @@ Reference: https://socket.io
     io()
     ```
 
-6. Start the app `npm start` and open the browser http://localhost:3002
+6. Start the app `npm start` and open the browser http://localhost:3001
 
     In console.log you will see:
 
@@ -84,3 +84,8 @@ Reference: https://socket.io
     server running
     new websocket connection
     ```
+
+## Module-3: Add socket events
+
+`src/index.js` - emits events from server
+`/public/js/chat.js` - emits events from client
