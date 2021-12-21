@@ -25,3 +25,62 @@ app.listen(port, ()=> {
   ```
 7. Run `npm run start`
 8. Open browser http://localhost:3001 and it should serve the static html file
+
+## Module-2: Add Socket.io
+
+Reference: https://socket.io
+
+1. Install socket.io
+   `npm i socket.io`
+2. Modify `/src/index.js`
+   1. Add http and socket.io modules
+
+    ```js
+    const http = require('http')
+    const socketio = require('socket.io')
+    ```
+
+   2. Create http and socketio instances. `http` will wrap express instance and `socketio` will wrap http instance.
+
+    ```js
+    const server = http.createServer(app)
+    const io = socketio(server)
+    ```
+
+   3. Instead of app (express) listening on the port, change it to use server (http instance) instead
+
+    ```js
+    server.listen(port, ()=> {
+      console.log('server running')
+    })
+    ```
+   4. Add io connection event 
+ 
+    ```js
+    io.on('connection', () => {
+      console.log('new websocket connection')
+    })
+    ```
+
+3. Create file `/public/js/chat.js`
+
+4. Modify `/public/index/html`
+
+    ``` html
+    <script src='/socket.io/socket.io.js'></script>
+    <script src='/js/chat.js'></script>
+    ```
+5. Modify `/public/js/chat.js`:
+  
+    ```js
+    io()
+    ```
+
+6. Start the app `npm start` and open the browser http://localhost:3002
+
+    In console.log you will see:
+
+    ```txt
+    server running
+    new websocket connection
+    ```
