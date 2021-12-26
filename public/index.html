@@ -3,6 +3,14 @@
   <body>
     <h1>Chat</h1>
     <button id="increment">Increment</button>
+    <form id="frmChat">
+      Username: <input type="text" name="txtUsername" />
+      Message: <input type="text" name="txtMessage" />
+      <button type="submit">Send</button>
+    </form>
+    <p id="message-panel">
+      
+    </p>
     <script src='/socket.io/socket.io.js'></script>
     <script src='/js/chat.js'></script>
   </body>

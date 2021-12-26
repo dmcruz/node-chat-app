@@ -19,6 +19,11 @@ io.on('connection', (socket) => {
     count++
     io.emit('countUpdated', count)
   })
+  socket.broadcast.emit('chat-event', 'A new user has joined');
+
+  socket.on('sendMessage', (message, username) => {
+    io.emit('receiveMessage', message, username)
+  })
 })
 server.listen(port, ()=> {
   console.log('server running')

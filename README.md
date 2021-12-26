@@ -89,3 +89,5 @@ Reference: https://socket.io
 
 `src/index.js` - emits events from server
 `/public/js/chat.js` - emits events from client
+
+## Module-4: Chat example, broadcast events
