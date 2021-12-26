@@ -91,3 +91,6 @@ Reference: https://socket.io
 `/public/js/chat.js` - emits events from client
 
 ## Module-4: Chat example, broadcast events
+
+`socket.broadcast.emit` - broadcast events to everyone except the current connection
+`socket.on('disconnect')` - event handler when a socket connection has disconnected 

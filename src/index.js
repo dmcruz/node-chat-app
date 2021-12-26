@@ -24,6 +24,10 @@ io.on('connection', (socket) => {
   socket.on('sendMessage', (message, username) => {
     io.emit('receiveMessage', message, username)
   })
+
+  socket.on('disconnect', () => {
+    io.emit('chat-event', 'A user has left')
+  })
 })
 server.listen(port, ()=> {
   console.log('server running')
