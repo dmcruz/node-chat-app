@@ -94,3 +94,43 @@ Reference: https://socket.io
 
 `socket.broadcast.emit` - broadcast events to everyone except the current connection
 `socket.on('disconnect')` - event handler when a socket connection has disconnected 
+
+
+## Module-5: Dockerize
+
+1. Create `Dockerfile` file with this content
+
+```dockerfile
+FROM node:18
+WORKDIR /usr/node-chat-app
+COPY package.json .
+RUN npm install
+COPY . .
+RUN ls -la 
+EXPOSE 3001
+CMD ["npm", "start"]
+```
+
+  Description of this file:
+    - Sets the base image as node version 18
+    - Creates a working directory /usr/node-chat-app
+    - Copies the package.json to the working directory
+    - Runs npm install
+    - Copies all files to the working directory
+    - Gets a list of files copied in the working directory
+    - Expose informs Docker that container should listen to the specified network port
+    - Runs the executable command with the following parameter; npm is the executable while start is the parameter
+
+2. Commands to run in the terminal:
+
+`docker build .` - build docker image
+`docker build --progress=plain .` - build docker image and show output from commands
+
+`docker run -p 3001:3001 <imageid>` - run image and publish to port 3001
+
+3. Run the app using http://localhost:3001
+
+4. Open another terminal and run this command:
+
+`docker ps` - list docker images that are running
+`docker stop <container id>` - stop the docker container instance
