@@ -125,6 +125,7 @@ CMD ["npm", "start"]
 2. Commands to run in the terminal:
 
 `docker build .` - build docker image
+
 `docker build --progress=plain .` - build docker image and show output from commands
 
 `docker run -p 3001:3001 <imageid>` - run image and publish to port 3001
@@ -134,4 +135,5 @@ CMD ["npm", "start"]
 4. Open another terminal and run this command:
 
 `docker ps` - list docker images that are running
+
 `docker stop <container id>` - stop the docker container instance
