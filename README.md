@@ -112,6 +112,7 @@ CMD ["npm", "start"]
 ```
 
   Description of this file:
+  
     - Sets the base image as node version 18
     - Creates a working directory /usr/node-chat-app
     - Copies the package.json to the working directory
